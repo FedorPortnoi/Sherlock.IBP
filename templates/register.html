@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SherlockIBP | Register</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 40px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .flash-messages {
+      color: #ff4c4c;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: #00bfff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/register">
+      <h2>Create Your Spy Profile</h2>
+      <input type="text" name="username" placeholder="Choose Username" required>
+      <input type="email" name="email" placeholder="Enter Your Email" required>
+      <button type="submit">Register</button>
+    </form>
+
+  </div>
+</body>
+</html>

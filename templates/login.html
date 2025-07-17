@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SherlockIBP</title>
+    <style>
+        body {
+            background: url("/static/Black\ and\ White\ Futuristic\ Tech\ Presentation.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 0 20px #00bfff;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .login-button {
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .login-button:hover {
+            background-color: #008ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Welcome Agent</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="text" name="agent_id" placeholder="Enter Agent ID" required>
+            <button class="login-button" type="submit">Enter Mission Control</button>
+        </form>
+    </div>
+</body>
+</html>
